@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class HashMapInSelenium {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
 		//Role based -- permission based use case
@@ -32,6 +32,9 @@ public class HashMapInSelenium {
 		driver.findElement(By.name("username")).sendKeys(getUserName(role));
 		driver.findElement(By.name("password")).sendKeys(getPassword(role));
 		driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div/div/input")).click();
+		
+		Thread.sleep(2000);
+		driver.close();
 				
 	}
 	
